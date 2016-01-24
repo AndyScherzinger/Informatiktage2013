@@ -8,9 +8,9 @@ import models.PollMongoResultEntity;
 import play.Logger;
 import play.data.Form;
 import play.libs.Akka;
-import play.mvc.Content;
 import play.mvc.Controller;
 import play.mvc.Result;
+import play.twirl.api.Content;
 import util.PollMongoBL;
 import actors.PollActor;
 import actors.messages.NewPollParticipantMessage;
@@ -305,7 +305,7 @@ public class PollController extends Controller {
 	 * @param name
 	 */
 	private static void createPollActor(final String name) {
-		Props props = new Props(PollActor.class);
+		Props props = Props.create(PollActor.class);
 		Akka.system().actorOf(props, name);
 	}
 
@@ -328,7 +328,7 @@ public class PollController extends Controller {
 			final NewPollParticipantMessage pollMessage = new NewPollParticipantMessage();
 			pollMessage.emailAddress = email;
 			pollMessage.pollName = pollName;
-			ref.tell(pollMessage);
+			ref.tell(pollMessage, ref);
 		} else {
 			Logger.error("A vote for a poll was given, but the poll seems not to exist. This is crazy");
 		}

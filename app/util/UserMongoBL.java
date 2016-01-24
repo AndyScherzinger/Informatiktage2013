@@ -1,6 +1,5 @@
 package util;
 
-import java.net.UnknownHostException;
 import java.util.List;
 import models.UserMongoEntity;
 import play.Logger;
@@ -19,7 +18,7 @@ public class UserMongoBL extends AbstractMongoBL {
 		MongoClient mongoClient = null;
 		try {
 			mongoClient = new MongoClient(getMongoHost(), getMongoPort());
-		} catch (UnknownHostException e) {
+		} catch (Throwable e) {
 			throw new RuntimeException(e);
 		}
 

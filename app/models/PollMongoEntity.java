@@ -3,13 +3,9 @@ package models;
 
 import java.util.ArrayList;
 import java.util.List;
-import play.db.ebean.Model;
+import com.avaje.ebean.Model;
 
 public class PollMongoEntity extends Model {
-    /**
-     * 
-     */
-    private static final long serialVersionUID = 1L;
     public String pollName;
     public String pollDescription;
     public String creator;

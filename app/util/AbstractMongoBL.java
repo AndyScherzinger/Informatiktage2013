@@ -16,7 +16,7 @@ public class AbstractMongoBL {
 	 * @return The configured MongoDB hostname or 'localhost'
 	 */
 	public String getMongoHost() {
-		return getStringConfigValue("mongo.host", "localhost");
+		return getStringConfigValue("db.mongo.host", "localhost");
 	}
 	
 	/**
@@ -24,7 +24,7 @@ public class AbstractMongoBL {
 	 * @return The configured MongoDB port or 27017
 	 */
 	public Integer getMongoPort() {
-		return getIntegerConfigValue("mongo.port", 27017);
+		return getIntegerConfigValue("db.mongo.port", 27017);
 	}
 	
 	/**
@@ -32,7 +32,7 @@ public class AbstractMongoBL {
 	 * @return The configured MongoDB database or 'playDb'
 	 */
 	public String getMongoDB() {
-		return getStringConfigValue("mongo.database", "playDb");
+		return getStringConfigValue("db.mongo.database", "playDb");
 	}
 
 	/**
@@ -73,7 +73,7 @@ public class AbstractMongoBL {
 	 * @return The configured MongoDB collection or 'polls'
 	 */
 	public String getMongoPollsCollection() {
-		return getStringConfigValue("mongo.pollsCollection", "polls");
+		return getStringConfigValue("db.mongo.pollsCollection", "polls");
 	}
 	
 	/**
@@ -81,6 +81,6 @@ public class AbstractMongoBL {
 	 * @return The configured MongoDB collection or 'users'
 	 */
 	public String getMongoUsersCollection() {
-		return getStringConfigValue("mongo.usersCollection", "users");
+		return getStringConfigValue("db.mongo.usersCollection", "users");
 	}
 }

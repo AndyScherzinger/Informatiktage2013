@@ -82,7 +82,7 @@ public class PollActor extends UntypedActor {
 			if (Logger.isDebugEnabled()) {
 				Logger.debug("Creating new EmailVersandActor");
 			}
-			ref = Akka.system().actorOf(new Props(EmailVersandActor.class),
+			ref = Akka.system().actorOf(Props.create(EmailVersandActor.class),
 					AKKA_EMAIL_CREATION_PREFIX);
 		}
 

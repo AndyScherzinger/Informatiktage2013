@@ -3,14 +3,10 @@ package models;
 
 import java.util.ArrayList;
 import java.util.List;
-import play.db.ebean.Model;
+import com.avaje.ebean.Model;
 import forms.RegisterLoginForm;
 
 public class UserMongoEntity extends Model {
-    /**
-     * 
-     */
-    private static final long serialVersionUID = 1L;
     public String username;
     public String password;
     public String email;
